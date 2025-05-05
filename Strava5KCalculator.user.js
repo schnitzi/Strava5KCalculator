@@ -32,9 +32,11 @@ window.addEventListener('load', function() {
         var time = splits[i].children[1].textContent;
         var matcher = time.match(timeMatcher);
         var split = parseInt(matcher[1])*60 + parseInt(matcher[2])
-        seconds += split;
         if (i < 5) {
             fiveKSeconds += split
+        }
+        if (i < 10) {
+            seconds += split;
         }
     }
 
